@@ -8,9 +8,24 @@
     <main>
       <h1>Credit Card Number Validator</h1>
       <form action="" id="cardForm">
-        <label for="card_number">Credit Card Number:</label><br />
-        <input type="number" id="card_number" name="card_number" placeholder="Credit card number to check..." />
-        <input type="submit" value="Click to Validate" />
+        <div class="mb-3">
+          <label for="card_number" class="form-label">Credit Card Number:</label>
+          <input
+            id="card_number"
+            name="card_number"
+            placeholder="Credit card number to check..."
+            class="form-control"
+            aria-describedby="credit card number"
+            required
+            pattern="[0-9]{4} [0-9]{4} [0-9]{4} [0-9]{1,4}"
+            title="Please enter 13-16 digits"
+            maxlength="19"
+          />
+          <div class="form-text">We'll never share your credit card number with anyone else.</div>
+        </div>
+        <div class="mb-3">
+          <button type="submit" class="btn btn-primary">Click to Validate</button>
+        </div>
       </form>
     </main>
     <footer></footer>

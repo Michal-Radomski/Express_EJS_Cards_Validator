@@ -7,3 +7,24 @@ h1 {
   text-align: center;
   padding-top: 50px;
 }
+
+form#cardForm {
+  width: 40%;
+  min-width: 300px;
+  margin-left: auto;
+  margin-right: auto;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  & div button {
+    margin-left: 5px;
+    transform: translateY(3px) !important;
+    transition: 0.35s ease-in-out !important;
+    &:hover {
+      transform: translateY(-1px) !important;
+    }
+  }
+}
