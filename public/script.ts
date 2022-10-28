@@ -5,6 +5,7 @@ const cardNumberInput = document?.querySelector("#card_number") as HTMLInputElem
 window.onload = () => {
   cardNumberInput.value = "";
 };
+
 cardNumberInput!.addEventListener("keydown", (event) => {
   if (
     event.key === "Enter" ||
