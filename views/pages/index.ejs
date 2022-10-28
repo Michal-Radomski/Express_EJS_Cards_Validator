@@ -8,7 +8,6 @@
     <main>
       <div>
         <div id="alertPlaceholder"></div>
-        <!-- <button type="button" class="btn btn-primary" id="liveAlertBtn">Show live alert</button> -->
       </div>
       <div class="formPlace">
         <h1>Credit Card Number Validator</h1>
@@ -37,29 +36,3 @@
     <footer></footer>
   </body>
 </html>
-
-<!-- //+ Notes -->
-<!-- <div id="alertPlaceholder"></div>
-<button type="button" class="btn btn-primary" id="liveAlertBtn">Show live alert</button> -->
-
-<!-- <script>
-  const alertPlaceholder = document.getElementById("alertPlaceholder");
-
-  const alert = (message, type) => {
-    const wrapper = document.createElement("div");
-    wrapper.innerHTML = [
-      `<div class="alert alert-${type} alert-dismissible" role="alert">
-        <div>${message}</div>
-        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-      </div>`,
-    ].join("");
-    alertPlaceholder.append(wrapper);
-  };
-
-  const alertTrigger = document.getElementById("liveAlertBtn");
-  if (alertTrigger) {
-    alertTrigger.addEventListener("click", () => {
-      alert("Alert test", "danger");
-    });
-  }
-</script> -->
