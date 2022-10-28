@@ -7,4 +7,8 @@ indexRouter.get("/", (req: Request, res: Response) => {
   res.render("pages/index", {});
 });
 
+indexRouter.get("/*", (_req: Request, res: Response) => {
+  res.render("pages/notFound", {});
+});
+
 export default indexRouter;
