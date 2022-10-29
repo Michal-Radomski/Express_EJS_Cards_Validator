@@ -2,11 +2,17 @@
 const cardForm = document?.querySelector("#cardForm");
 const cardNumberInput = document?.querySelector("#card_number") as HTMLInputElement;
 const alertPlaceholder = document.getElementById("alertPlaceholder");
-// console.log({ cardForm, cardNumberInput, alertPlaceholder });
+const creditCardIcon = document.getElementById("creditCardIcon") as HTMLImageElement;
+// console.log({ cardForm, cardNumberInput, alertPlaceholder, creditCardIcon });
+
+function resetForm() {
+  cardNumberInput.value = "";
+  creditCardIcon.src = "";
+}
 
 // Reset Input on Load
 window.onload = () => {
-  cardNumberInput.value = "";
+  resetForm();
 };
 
 //* Credit Card Validation
@@ -158,18 +164,21 @@ const alertMessage = (message: string, type: string, icon: string) => {
 };
 
 // Add alert on Letter Input
+const permittedKeys = [
+  "Enter",
+  "Escape",
+  "Backspace",
+  "CapsLock",
+  "Shift",
+  "NumLock",
+  "Control",
+  "ArrowRight",
+  "ArrowLeft",
+  "Delete",
+];
 cardNumberInput!.addEventListener("keydown", (event) => {
   if (
-    event.key === "Enter" ||
-    event.key === "Escape" ||
-    event.key === "Backspace" ||
-    event.key === "CapsLock" ||
-    event.key === "Shift" ||
-    event.key === "NumLock" ||
-    event.key === "Control" ||
-    event.key === "ArrowRight" ||
-    event.key === "ArrowLeft" ||
-    event.key === "Delete" ||
+    permittedKeys.includes(event.key) ||
     (event.ctrlKey && (event.key === "v" || event.key === "V")) ||
     (event.ctrlKey && (event.key === "c" || event.key === "C"))
   ) {
@@ -198,11 +207,14 @@ cardForm?.addEventListener("submit", (event) => {
   // const cardNumber = parseInt(cardNumberStringValue.split(" ").join(""), 10);
   // console.log({ cardNumber });
   const data = checkCreditCard(cardNumberStringValue);
-  console.log({ data });
+  // console.log({ data });
   if (data.success === false || data.type === null) {
     alertMessage(data.message!, "danger", "./iconWarning.svg");
   }
   if (data.success === true && data.type) {
     alertMessage(`Your card is issued by ${data.type!}`, "success", "./iconSuccess.svg");
+    if (data.type! === "Visa") {
+      creditCardIcon!.src = "./cards/1_visa.png";
+    }
   }
 });
