@@ -147,14 +147,14 @@ const alertMessage = (message: string, type: string) => {
   wrapper.innerHTML = [
     `<div class="alert alert-${type} alert-dismissible d-flex align-items-center" role="alert">
       <img src="iconWarning.svg" alt="warning icon" style="margin-right:5px"/>
-      <div>${message}</div>
+      <div style="font-weight: bold">${message}</div>
       <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
     </div>`,
   ].join("");
   alertPlaceholder!.append(wrapper);
   setTimeout(() => {
     alertPlaceholder?.removeChild(wrapper);
-  }, 3500);
+  }, 5000);
 };
 
 // Add alert on Letter Input
@@ -199,4 +199,10 @@ cardForm?.addEventListener("submit", (event) => {
   // console.log({ cardNumber });
   const data = checkCreditCard(cardNumberStringValue);
   console.log({ data });
+  if (data.success === false || data.type === null) {
+    alertMessage(data.message!, "danger");
+  }
+  if (data.success === true && data.type) {
+    alertMessage(`Your card is issued by ${data.type!}`, "success");
+  }
 });
