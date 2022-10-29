@@ -71,7 +71,7 @@ const checkCreditCard = (CardNumber: string) => {
   cards[5] = { name: "American Express", length: "15", prefixes: "34,37", checkDigit: true };
   cards[6] = { name: "VisaElectron", length: "16", prefixes: "4026,417500,4508,4844,4913,4917", checkDigit: true };
 
-  // Now remove any spaces from the credit card number
+  // Remove any spaces from the credit card number
   CardNumber = CardNumber.replace(/\s/g, "");
 
   // Validate the format of the credit card LuhnCheck algorithm
@@ -110,7 +110,7 @@ const checkCreditCard = (CardNumber: string) => {
       const lengths = cards[index].length.split(",");
       // console.log({ lengths }, typeof lengths);
 
-      // Now see if its of valid length;
+      // See if its of valid length;
       for (let j = 0; j < lengths.length; j++) {
         // console.log("lengths[j]:", lengths[j]);
         // console.log(CardNumber.length == Number(lengths[j]), CardNumber.length);
