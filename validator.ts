@@ -1,3 +1,5 @@
+//* Original algorithm: https://learnersbucket.com/examples/javascript/credit-card-validation-in-javascript
+
 const validateCardNumber = (number: string) => {
   // Check if the number contains only numeric value and is of between 13 to 19 digits
   const regex = new RegExp("^[0-9]{13,19}$");
@@ -141,9 +143,12 @@ const checkCreditCard = (CardNumber: string) => {
 };
 
 // console.log("checkCreditCard:", checkCreditCard("424242424242424")); //* Visa Invalid!!!
-// console.log("checkCreditCard:", checkCreditCard("4242424242424242"));
-// console.log("checkCreditCard:", checkCreditCard("371449635398431"));
-// console.log("checkCreditCard:", checkCreditCard("3400 0000 0000 009"));
-// console.log("checkCreditCard:", checkCreditCard("30569309025904"));
-// console.log("checkCreditCard:", checkCreditCard("6011111111111117"));
-// console.log("checkCreditCard:", checkCreditCard("3530111333300000"));
+// console.log("checkCreditCard:", checkCreditCard("4242424242424242")); //* Visa
+// console.log("checkCreditCard:", checkCreditCard("371449635398431")); //* American Express""
+// console.log("checkCreditCard:", checkCreditCard("3400 0000 0000 009")); //* American Express""
+// console.log("checkCreditCard:", checkCreditCard("30569309025904")); //* Dinners Club
+// console.log("checkCreditCard:", checkCreditCard("6011111111111117")); //* Discover
+// console.log("checkCreditCard:", checkCreditCard("3530111333300000")); //* JCB
+// console.log("checkCreditCard:", checkCreditCard("6763-0903-0733-1012")); //* Maestro
+// console.log("checkCreditCard:", checkCreditCard("4917300800000000")); //* Visa Electron
+// console.log("checkCreditCard:", checkCreditCard("5500 0000 0000 0004")); //* Master Card

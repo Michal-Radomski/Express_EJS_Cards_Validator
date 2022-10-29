@@ -210,11 +210,29 @@ cardForm?.addEventListener("submit", (event) => {
   // console.log({ data });
   if (data.success === false || data.type === null) {
     alertMessage(data.message!, "danger", "./iconWarning.svg");
+    creditCardIcon!.src = "";
   }
   if (data.success === true && data.type) {
     alertMessage(`Your card is issued by ${data.type!}`, "success", "./iconSuccess.svg");
-    if (data.type! === "Visa") {
-      creditCardIcon!.src = "./cards/1_visa.png";
-    }
+    // if (data.type! === "Visa") {
+    //   creditCardIcon!.src = "./cards/1_visa.png";
+    // }
+    data.type === "Visa"
+      ? (creditCardIcon!.src = "./cards/1_visa.png")
+      : data.type === "MasterCard"
+      ? (creditCardIcon!.src = "./cards/2_master_card.png")
+      : data.type === "DinersClub"
+      ? (creditCardIcon!.src = "./cards/3_dinners_club.png")
+      : data.type === "Discover"
+      ? (creditCardIcon!.src = "./cards/4_discover.png")
+      : data.type === "JCB"
+      ? (creditCardIcon!.src = "./cards/5_JCB.png")
+      : data.type === "American Express"
+      ? (creditCardIcon!.src = "./cards/6_am_express.png")
+      : data.type === "VisaElectron"
+      ? (creditCardIcon!.src = "./cards/7_visa_electron.png")
+      : data.type === "Maestro"
+      ? (creditCardIcon!.src = "./cards/8_maestro.png")
+      : (creditCardIcon!.src = "");
   }
 });
