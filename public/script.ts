@@ -76,13 +76,13 @@ const checkCreditCard = (CardNumber: string) => {
   }
 
   const cards: Card[] = [];
-  cards[0] = { name: "Visa", length: "13,16", prefixes: "4", checkDigit: true };
+  cards[0] = { name: "VisaElectron", length: "16", prefixes: "4026,417500,4508,4844,4913,4917", checkDigit: true };
   cards[1] = { name: "MasterCard", length: "16", prefixes: "51,52,53,54,55", checkDigit: true };
   cards[2] = { name: "DinersClub", length: "14,16", prefixes: "305,36,38,54,55", checkDigit: true };
   cards[3] = { name: "Discover", length: "16", prefixes: "6011,622,64,65", checkDigit: true };
   cards[4] = { name: "JCB", length: "16", prefixes: "35", checkDigit: true };
   cards[5] = { name: "American Express", length: "15", prefixes: "34,37", checkDigit: true };
-  cards[6] = { name: "VisaElectron", length: "16", prefixes: "4026,417500,4508,4844,4913,4917", checkDigit: true };
+  cards[6] = { name: "Visa", length: "13,16", prefixes: "4", checkDigit: true };
   cards[7] = {
     name: "Maestro",
     length: "12,13,14,15,16,18,19",
