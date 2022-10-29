@@ -142,11 +142,11 @@ const checkCreditCard = (CardNumber: string) => {
 };
 
 //* Bootstrap Alert
-const alertMessage = (message: string, type: string) => {
+const alertMessage = (message: string, type: string, icon: string) => {
   const wrapper = document.createElement("div");
   wrapper.innerHTML = [
     `<div class="alert alert-${type} alert-dismissible d-flex align-items-center" role="alert">
-      <img src="iconWarning.svg" alt="warning icon" style="margin-right:5px"/>
+      <img src=${icon} alt="warning icon" style="margin-right:8px"/>
       <div style="font-weight: bold">${message}</div>
       <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
     </div>`,
@@ -178,7 +178,7 @@ cardNumberInput!.addEventListener("keydown", (event) => {
   if ((event.key >= "a" && event.key <= "z") || (event.key >= "A" && event.key <= "Z")) {
     // alert("Please enter only digits");
     // console.log(event.key);
-    alertMessage("Please enter only digits", "warning");
+    alertMessage("Please enter only digits", "warning", "./iconInfo.svg");
   }
 });
 
@@ -200,9 +200,9 @@ cardForm?.addEventListener("submit", (event) => {
   const data = checkCreditCard(cardNumberStringValue);
   console.log({ data });
   if (data.success === false || data.type === null) {
-    alertMessage(data.message!, "danger");
+    alertMessage(data.message!, "danger", "./iconWarning.svg");
   }
   if (data.success === true && data.type) {
-    alertMessage(`Your card is issued by ${data.type!}`, "success");
+    alertMessage(`Your card is issued by ${data.type!}`, "success", "./iconSuccess.svg");
   }
 });
