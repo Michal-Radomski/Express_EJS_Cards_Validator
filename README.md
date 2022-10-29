@@ -1,3 +1,3 @@
-# Node_EJS_App
+# Express EJS Stack Credit Cards Validator
 
-Node Express EJS Stack App
+Node Express EJS Stack Credit Cards Validator App
