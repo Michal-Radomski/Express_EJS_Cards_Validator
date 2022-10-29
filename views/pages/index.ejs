@@ -13,7 +13,9 @@
         <h1>Credit Card Number Validator</h1>
         <form action="" id="cardForm">
           <div class="mb-3">
-            <label for="card_number" class="form-label">Credit Card Number:</label>
+            <label for="card_number" class="form-label"
+              >Credit Card Number <span style="font-weight: 600">(Only 12-19 digits)</span>:</label
+            >
             <input
               id="card_number"
               name="card_number"
@@ -21,9 +23,10 @@
               class="form-control"
               aria-describedby="credit card number"
               required
-              pattern="[0-9]{4} [0-9]{4} [0-9]{4} [0-9]{1,4}"
-              title="Please enter 13-16 digits"
-              maxlength="19"
+              pattern="[0-9]{4} [0-9]{4} [0-9]{4} ?[0-9]{0,4} ?[0-9]{0,3}"
+              title="Please enter 12-19 digits"
+              minlength="14"
+              maxlength="23"
             />
             <div class="form-text">We'll never share your credit card number with anyone else.</div>
           </div>

@@ -12,7 +12,7 @@ window.onload = () => {
 //* Credit Card Validation
 const validateCardNumber = (number: string) => {
   // Check if the number contains only numeric value and is of between 13 to 19 digits
-  const regex = new RegExp("^[0-9]{13,19}$");
+  const regex = new RegExp("^[0-9]{12,19}$");
   if (!regex.test(number)) {
     return false;
   }
@@ -77,6 +77,12 @@ const checkCreditCard = (CardNumber: string) => {
   cards[4] = { name: "JCB", length: "16", prefixes: "35", checkDigit: true };
   cards[5] = { name: "American Express", length: "15", prefixes: "34,37", checkDigit: true };
   cards[6] = { name: "VisaElectron", length: "16", prefixes: "4026,417500,4508,4844,4913,4917", checkDigit: true };
+  cards[7] = {
+    name: "Maestro",
+    length: "12,13,14,15,16,18,19",
+    prefixes: "5018,5020,5038,6304,6759,6761,6762,6763",
+    checkDigit: true,
+  };
 
   // Remove any spaces from the credit card number
   CardNumber = CardNumber.replace(/\s/g, "");
@@ -158,7 +164,14 @@ cardNumberInput!.addEventListener("keydown", (event) => {
     event.key === "Escape" ||
     event.key === "Backspace" ||
     event.key === "CapsLock" ||
-    event.key === "Shift"
+    event.key === "Shift" ||
+    event.key === "NumLock" ||
+    event.key === "Control" ||
+    event.key === "ArrowRight" ||
+    event.key === "ArrowLeft" ||
+    event.key === "Delete" ||
+    (event.ctrlKey && (event.key === "v" || event.key === "V")) ||
+    (event.ctrlKey && (event.key === "c" || event.key === "C"))
   ) {
     return;
   }
@@ -184,5 +197,6 @@ cardForm?.addEventListener("submit", (event) => {
   // console.log({ cardNumberStringValue });
   // const cardNumber = parseInt(cardNumberStringValue.split(" ").join(""), 10);
   // console.log({ cardNumber });
-  console.log(checkCreditCard(cardNumberStringValue));
+  const data = checkCreditCard(cardNumberStringValue);
+  console.log({ data });
 });
