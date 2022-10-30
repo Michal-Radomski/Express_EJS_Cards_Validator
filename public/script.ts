@@ -6,8 +6,10 @@ const creditCardIcon = document.getElementById("creditCardIcon") as HTMLImageEle
 // console.log({ cardForm, cardNumberInput, alertPlaceholder, creditCardIcon });
 
 function resetForm() {
-  cardNumberInput.value = "";
-  creditCardIcon.src = "";
+  if (cardNumberInput && creditCardIcon) {
+    cardNumberInput.value = "";
+    creditCardIcon.src = "";
+  }
 }
 
 // Reset Input on Load
@@ -176,28 +178,30 @@ const permittedKeys = [
   "ArrowLeft",
   "Delete",
 ];
-cardNumberInput!.addEventListener("keydown", (event) => {
-  if (
-    permittedKeys.includes(event.key) ||
-    (event.ctrlKey && (event.key === "v" || event.key === "V")) ||
-    (event.ctrlKey && (event.key === "c" || event.key === "C"))
-  ) {
-    return;
-  }
-  if ((event.key >= "a" && event.key <= "z") || (event.key >= "A" && event.key <= "Z")) {
-    // alert("Please enter only digits");
-    // console.log(event.key);
-    alertMessage("Please enter only digits", "warning", "./iconInfo.svg");
-  }
-});
+cardNumberInput &&
+  cardNumberInput!.addEventListener("keydown", (event) => {
+    if (
+      permittedKeys.includes(event.key) ||
+      (event.ctrlKey && (event.key === "v" || event.key === "V")) ||
+      (event.ctrlKey && (event.key === "c" || event.key === "C"))
+    ) {
+      return;
+    }
+    if ((event.key >= "a" && event.key <= "z") || (event.key >= "A" && event.key <= "Z")) {
+      // alert("Please enter only digits");
+      // console.log(event.key);
+      alertMessage("Please enter only digits", "warning", "./iconInfo.svg");
+    }
+  });
 
 // Group the numbers in groups of four
-cardNumberInput!.addEventListener("input", (event) => {
-  (event.target! as HTMLInputElement).value = (event.target! as HTMLInputElement).value
-    .replace(/[^\dA-Z]/g, "")
-    .replace(/(.{4})/g, "$1 ")
-    .trim();
-});
+cardNumberInput &&
+  cardNumberInput!.addEventListener("input", (event) => {
+    (event.target! as HTMLInputElement).value = (event.target! as HTMLInputElement).value
+      .replace(/[^\dA-Z]/g, "")
+      .replace(/(.{4})/g, "$1 ")
+      .trim();
+  });
 
 // Submit form
 cardForm?.addEventListener("submit", (event) => {
@@ -214,9 +218,6 @@ cardForm?.addEventListener("submit", (event) => {
   }
   if (data.success === true && data.type) {
     alertMessage(`Your card is issued by ${data.type!}`, "success", "./iconSuccess.svg");
-    // if (data.type! === "Visa") {
-    //   creditCardIcon!.src = "./cards/1_visa.png";
-    // }
     data.type === "Visa"
       ? (creditCardIcon!.src = "./cards/1_visa.png")
       : data.type === "MasterCard"
