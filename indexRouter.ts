@@ -6,26 +6,37 @@ import axios from "axios";
 const url_api = process.env.API_URL as string;
 // console.log({ url_api });
 
-const indexRouter: Router = express.Router();
-
-indexRouter.get("/", async (req: Request, res: Response) => {
-  await console.log("req.ip:", req.ip);
-
+const fetchDate = async () => {
+  let dateToSend;
   await axios
     .get(url_api)
     .then((response) => {
-      const dateToSend = response.data[0].commit.author.date;
+      dateToSend = response?.data[0]?.commit?.author?.date;
       // console.log({ dateToSend });
-      // return dateToSend;
-      res.render("pages/index", { lastCommitDate: dateToSend });
     })
     .catch((error) => {
       console.log({ error });
     });
+  if (dateToSend) {
+    dateToSend = new Date(dateToSend);
+    dateToSend = dateToSend.toLocaleString();
+    // console.log(dateToSend, typeof dateToSend);
+    return dateToSend;
+  }
+};
+
+const indexRouter: Router = express.Router();
+
+indexRouter.get("/", async (req: Request, res: Response) => {
+  await console.log("req.ip:", req.ip);
+  const lastCommitDate = await fetchDate();
+  // await console.log("lastCommitDate:", lastCommitDate);
+  await res.render("pages/index", { lastCommitDate: lastCommitDate });
 });
 
-indexRouter.get("/*", (_req: Request, res: Response) => {
-  res.render("pages/notFound", {});
+indexRouter.get("/*", async (_req: Request, res: Response) => {
+  const lastCommitDate = await fetchDate();
+  await res.render("pages/notFound", { lastCommitDate: lastCommitDate });
 });
 
 export default indexRouter;
