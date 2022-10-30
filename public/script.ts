@@ -5,6 +5,12 @@ const alertPlaceholder = document.getElementById("alertPlaceholder");
 const creditCardIcon = document.getElementById("creditCardIcon") as HTMLImageElement;
 // console.log({ cardForm, cardNumberInput, alertPlaceholder, creditCardIcon });
 
+// Bootstrap Tooltips
+declare let bootstrap: any;
+const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]');
+const tooltipList = [...tooltipTriggerList].map((tooltipTriggerEl) => new bootstrap.Tooltip(tooltipTriggerEl));
+// console.log({ tooltipTriggerList, tooltipList, bootstrap });
+
 function resetForm() {
   if (cardNumberInput && creditCardIcon) {
     cardNumberInput.value = "";

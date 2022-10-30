@@ -1,4 +1,4 @@
-// variables:
+// Variables:
 @base-color: #f6f8f9;
 @second-color: #6c757d;
 
@@ -63,6 +63,7 @@ header {
       color: @base-color !important;
     }
   }
+  ul li button.navColor,
   ul li a.navColor {
     color: @base-color !important;
     &:hover {
@@ -94,4 +95,13 @@ div#footerDiv {
       }
     }
   }
+}
+
+// Tooltips Customizing:
+div.tooltip-inner {
+  background-color: var(--bs-success) !important;
+}
+
+div.tooltip-arrow::before {
+  border-bottom-color: var(--bs-success) !important;
 }

@@ -1,12 +1,48 @@
 <header class="d-flex flex-wrap justify-content-center py-3 border-bottom bg-dark text-white">
-  <a href="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-white text-decoration-none px-3">
+  <a
+    href="/"
+    class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-white text-decoration-none px-3"
+    data-bs-toggle="tooltip"
+    data-bs-placement="bottom"
+    data-bs-title="Home Page"
+  >
     <img src="favicon.png" alt="icon of a credit card" class="bi me-2" width="40" height="40" />
     <span class="fs-4 text-secondary navColor">Credit Cards Validator</span>
   </a>
 
   <ul class="nav nav-pills">
-    <li class="nav-item"><a href="/" class="nav-link text-white navColor">Home</a></li>
-    <li class="nav-item"><a href="/" class="nav-link text-white navColor">Info & Credits</a></li>
-    <li class="nav-item"><a href="#" class="nav-link text-white navColor">Repo Link</a></li>
+    <li class="nav-item" data-bs-toggle="tooltip" data-bs-placement="bottom" data-bs-title="Home Page">
+      <a href="/" class="nav-link text-white navColor">Home</a>
+    </li>
+    <li class="nav-item" data-bs-toggle="tooltip" data-bs-placement="left" data-bs-title="Link opens as a modal">
+      <button type="button" class="nav-link text-white navColor" data-bs-toggle="modal" data-bs-target="#infoModal">
+        Info & Credits
+      </button>
+    </li>
+    <li class="nav-item" data-bs-toggle="tooltip" data-bs-placement="left" data-bs-title="Link opens in a new window">
+      <a
+        href="https://github.com/Michal-Radomski/Express_EJS_Cards_Validator"
+        class="nav-link text-white navColor"
+        target="_blank"
+        >Repo Link</a
+      >
+    </li>
   </ul>
 </header>
+
+<!-- Modal -->
+<div class="modal fade" id="infoModal" tabindex="-1" aria-labelledby="infoModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">...</div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>

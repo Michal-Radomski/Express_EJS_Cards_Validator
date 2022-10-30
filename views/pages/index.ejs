@@ -32,8 +32,25 @@
             <div class="form-text">We'll never share your credit card number with anyone else.</div>
           </div>
           <div class="mb-3">
-            <button type="submit" class="btn btn-primary">Click to Validate</button>
-            <button type="reset" class="btn btn-secondary" onClick="resetForm()">Reset</button>
+            <button
+              type="submit"
+              class="btn btn-primary"
+              data-bs-toggle="tooltip"
+              data-bs-placement="bottom"
+              data-bs-title="Validate Credit Card"
+            >
+              Click to Validate
+            </button>
+            <button
+              type="reset"
+              class="btn btn-secondary"
+              onClick="resetForm()"
+              data-bs-toggle="tooltip"
+              data-bs-placement="bottom"
+              data-bs-title="Reset Credit Card"
+            >
+              Reset
+            </button>
           </div>
         </form>
         <div class="cardImage">
