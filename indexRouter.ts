@@ -2,6 +2,7 @@ import * as dotenv from "dotenv";
 dotenv.config();
 import express, { Router, Request, Response } from "express";
 import axios from "axios";
+import moment from "moment";
 
 const url_api = process.env.API_URL as string;
 // console.log({ url_api });
@@ -19,8 +20,7 @@ const fetchDate = async () => {
     });
   if (dateToSend) {
     dateToSend = new Date(dateToSend);
-    dateToSend = dateToSend.toLocaleString();
-    // console.log(dateToSend, typeof dateToSend);
+    dateToSend = moment(dateToSend).fromNow();
     return dateToSend;
   }
 };
