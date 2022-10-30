@@ -1,5 +1,9 @@
+// variables:
+@base-color: #f6f8f9;
+@second-color: #6c757d;
+
 body {
-  background-color: #f8f8f0;
+  background-color: @base-color;
   box-sizing: border-box;
 }
 
@@ -28,7 +32,7 @@ div.formPlace {
     div button {
       transform: translateY(3px) !important;
       transition: 0.35s ease-in-out !important;
-      color: #f8f8f0 !important;
+      color: @base-color !important;
       &:hover {
         transform: translateY(-1px) !important;
       }
@@ -53,16 +57,16 @@ h1.notFound {
 }
 
 header {
-  a span {
-    color: initial;
+  a span.navColor {
+    color: @second-color !important;
     &:hover {
-      color: #f8f8f0 !important;
+      color: @base-color !important;
     }
   }
   ul li a.navColor {
-    color: #f8f8f0 !important;
+    color: @base-color !important;
     &:hover {
-      color: #6c757d !important;
+      color: @second-color !important;
     }
   }
 }
@@ -80,9 +84,9 @@ div#footerDiv {
     height: 100%;
     p {
       margin-bottom: 0;
-      color: #f8f8f0 !important;
+      color: @second-color !important;
       &:hover {
-        color: #6c757d !important;
+        color: @base-color !important;
       }
     }
   }
