@@ -42,23 +42,19 @@ const axios_1 = __importDefault(require("axios"));
 const url_api = process.env.API_URL;
 // console.log({ url_api });
 const indexRouter = express_1.default.Router();
-const fetchDate = () => {
-    axios_1.default
+indexRouter.get("/", (req, res) => __awaiter(void 0, void 0, void 0, function* () {
+    yield console.log("req.ip:", req.ip);
+    yield axios_1.default
         .get(url_api)
         .then((response) => {
         const dateToSend = response.data[0].commit.author.date;
         // console.log({ dateToSend });
-        return dateToSend;
+        // return dateToSend;
+        res.render("pages/index", { lastCommitDate: dateToSend });
     })
         .catch((error) => {
         console.log({ error });
     });
-};
-indexRouter.get("/", (req, res) => __awaiter(void 0, void 0, void 0, function* () {
-    const lastCommitDate = yield fetchDate();
-    yield console.log({ lastCommitDate });
-    yield console.log("req.ip:", req.ip);
-    yield res.render("pages/index", { lastCommitDate: lastCommitDate });
 }));
 indexRouter.get("/*", (_req, res) => {
     res.render("pages/notFound", {});
