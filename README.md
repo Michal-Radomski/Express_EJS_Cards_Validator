@@ -1,7 +1,46 @@
 # Express EJS Stack Credit Cards Validator
 
-Node Express EJS Stack Credit Cards Validator App
+Node, Express, Less and EJS Stack App for Credit Cards Number Verification.
 
-Link to the app: [https://node-card-validator.herokuapp.com](https://node-card-validator.herokuapp.com)
+Link to the application: [https://node-card-validator.herokuapp.com](https://node-card-validator.herokuapp.com)
 
-More details ...soon
+## Description
+
+### General Info
+
+The app uses **[Luhn algorithm](https://en.wikipedia.org/wiki/Luhn_algorithm)**, prefixes and number length to validate
+credit cards. The algorithm was taken from
+[Rosetta Code](https://rosettacode.org/wiki/Luhn_test_of_credit_card_numbers#JavaScript) and
+[LearnersBucket](LearnersBucket).
+
+You can use those credit cars numbers to test the app:\
+Visa: `424242424242424`,\
+American Express: `371449635398431` or `3400 0000 0000 009`,\
+Dinners Club: `30569309025904`,\
+Discover: `6011111111111117`,\
+JCB: `3530111333300000`,\
+Maestro: `6763-0903-0733-1012`\
+Visa Electron: `4917300800000000`,\
+Master Card: `5500 0000 0000 0004`.
+
+## Notes
+
+The .env file is not hosted on [GitHub.com](https://github.com).
+
+## ScreenShots
+
+<img alt="Screen 1" src="./screenShots/screen_1.png">
+<img alt="Screen 2" src="./screenShots/screen_2.png">
+<img alt="Screen 3" src="./screenShots/screen_3.png">
+<img alt="Screen 4" src="./screenShots/screen_4.png">
+
+## Built With
+
+- The App is written in [TypeScript](https://www.typescriptlang.org).
+- [Express](https://expressjs.com) is use to build server-side.
+- [EJS](https://ejs.co) is use to generate HTML.
+- [Less](https://lesscss.org) is use to style the app.
+
+## License
+
+[MIT](https://choosealicense.com/licenses/mit)
