@@ -11,10 +11,10 @@ Link to the application: [https://node-card-validator.herokuapp.com](https://nod
 The app uses **[Luhn algorithm](https://en.wikipedia.org/wiki/Luhn_algorithm)**, prefixes and number length to validate
 credit cards. The algorithm was taken from
 [Rosetta Code](https://rosettacode.org/wiki/Luhn_test_of_credit_card_numbers#JavaScript) and
-[LearnersBucket](LearnersBucket).
+[LearnersBucket](https://learnersbucket.com/examples/javascript/credit-card-validation-in-javascript).
 
 You can use those credit cars numbers to test the app:\
-Visa: `424242424242424`,\
+Visa: `4242424242424242`,\
 American Express: `371449635398431` or `3400 0000 0000 009`,\
 Dinners Club: `30569309025904`,\
 Discover: `6011111111111117`,\
@@ -37,9 +37,9 @@ The .env file is not hosted on [GitHub.com](https://github.com).
 ## Built With
 
 - The App is written in [TypeScript](https://www.typescriptlang.org).
-- [Express](https://expressjs.com) is use to build server-side.
-- [EJS](https://ejs.co) is use to generate HTML.
-- [Less](https://lesscss.org) is use to style the app.
+- [Express](https://expressjs.com) is used to build server-side.
+- [EJS](https://ejs.co) is used to generate HTML.
+- [Less](https://lesscss.org) is used to style the app.
 
 ## License
 
