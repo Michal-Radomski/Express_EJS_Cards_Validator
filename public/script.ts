@@ -183,6 +183,7 @@ const permittedKeys = [
   "ArrowRight",
   "ArrowLeft",
   "Delete",
+  "Tab",
 ];
 cardNumberInput &&
   cardNumberInput!.addEventListener("keydown", (event) => {
