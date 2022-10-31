@@ -40,7 +40,7 @@ I have some packages installed globally (e.g. TypeScript, Nodemon) so you have t
 - The App is written in [TypeScript](https://www.typescriptlang.org),
 - [Express](https://expressjs.com) is used to build server-side,
 - [EJS](https://ejs.co) is used to generate HTML,
-- [Less](https://lesscss.org) and [Bootstrap](https://getbootstrap.com) are used to style the app'.
+- [Less](https://lesscss.org) and [Bootstrap](https://getbootstrap.com) are used to style the app.
 
 ## License
 
