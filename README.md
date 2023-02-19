@@ -2,7 +2,7 @@
 
 Node, Express, Less and EJS Stack App for Credit Cards Number Verification.
 
-Link to the application: [https://node-card-validator.herokuapp.com](https://node-card-validator.herokuapp.com)
+Link to the application: Coming soon...
 
 ## Description
 
