@@ -1,3 +1,5 @@
+// Todo: add compression: https://www.npmjs.com/package/compression
+
 import express, { Express, Request, Response } from "express";
 import helmet from "helmet";
 import morgan from "morgan";
