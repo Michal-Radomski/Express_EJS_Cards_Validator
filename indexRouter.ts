@@ -25,7 +25,7 @@ const fetchDate = async () => {
   }
 };
 
-const indexRouter: Router = express.Router();
+const indexRouter: Router = express.Router({ strict: false, caseSensitive: true });
 
 indexRouter.get("/", async (req: Request, res: Response) => {
   await console.log("req.ip:", req.ip);
